@@ -1,0 +1,60 @@
+" Ideas from:
+" Source: https://github.com/bhilburn/dotfiles/blob/master/vim/
+" And from Steve Losh's spectacular vimrc.
+" Source: http://bitbucket.org/sjl/dotfiles/src/tip/vim/
+
+" Ignore compatibility issues with Vi. Really don't know why ViM still defaults
+" to this. Especially gViM.
+set nocompatible
+
+" To enable Pathogen, we have to first disable the filetype, load the bundles,
+ and then re-enable.
+filetype off
+call pathogen#infect()
+call pathogen#helptags()
+filetype plugin indent on
+syntax on
+
+" General Options
+set encoding=utf-8
+set autoindent
+set showmode
+set showcmd
+set hidden
+set visualbell
+set ttyfast
+set ruler
+set backspace=indent,eol,start
+set number
+set norelativenumber
+set laststatus=2
+set history=1000
+set list
+set listchars=tab:▸\ ,trail:·,extends:❯,precedes:❮
+set shell=/bin/bash\ --login
+set matchtime=3
+set showbreak=↪
+set splitbelow
+set splitright
+set fillchars=diff:⣿,vert:│
+set autowrite
+set autoread
+set shiftround
+set title
+set linebreak
+"set spellfile=~/.vim/custom-dictionary.utf-8.add
+set colorcolumn=+1
+set modelines=5
+
+" Disabling this because vim-airline doesn't like it
+"set lazyredraw
+
+" Set options regarding the undo history and undo tree depth
+set undofile
+set undoreload=10000
+set undolevels=512
+
+" Don't try to highlight lines longer than 800 characters.
+set synmaxcol=800
+
+
