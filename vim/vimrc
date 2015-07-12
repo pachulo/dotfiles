@@ -57,4 +57,15 @@ set undolevels=512
 " Don't try to highlight lines longer than 800 characters.
 set synmaxcol=800
 
+" Rainbow {{{
 
+let g:rainbow_active = 1
+
+" }}}
+
+" Solarized {{{
+syntax enable
+set background=dark
+colorscheme solarized
+
+" }}}
