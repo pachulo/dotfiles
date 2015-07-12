@@ -8,7 +8,7 @@
 set nocompatible
 
 " To enable Pathogen, we have to first disable the filetype, load the bundles,
- and then re-enable.
+" and then re-enable.
 filetype off
 call pathogen#infect()
 call pathogen#helptags()
