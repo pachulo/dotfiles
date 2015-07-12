@@ -102,3 +102,9 @@ let NERDTreeChDirMode = 2
 let NERDTreeMapJumpFirstChild = 'gK'
 
 " }}}
+
+" Tagbar {{{
+inoremap <F7> :TagbarToggle<CR>
+nnoremap <F7> :TagbarToggle<CR>
+vnoremap <F7> :TagbarToggle<CR>
+" }}}
