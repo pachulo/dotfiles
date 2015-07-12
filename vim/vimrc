@@ -66,6 +66,11 @@ let g:rainbow_active = 1
 " Solarized {{{
 syntax enable
 set background=dark
+if has('gui_running')
+	set background=dark
+else
+	set background=dark
+	let g:solarized_termcolors=256
+endif
 colorscheme solarized
-
 " }}}
