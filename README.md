@@ -9,6 +9,7 @@ To use the vim config files:
 
 ## Bash
 To use the bash_profile file:
+
 	git clone --recursive https://github.com/pachulo/dotfiles.git pachulo-configs.git
 	ln -s pachulo-configs.git/bash_profile ~/.bash_profile
 
