@@ -57,6 +57,67 @@ set undolevels=512
 " Don't try to highlight lines longer than 800 characters.
 set synmaxcol=800
 
+" Resize splits when the window is resized
+"au VimResized * :wincmd =
+
+" Only show cursorline in the current window and in normal mode.
+augroup cline
+    au!
+    au WinLeave,InsertEnter * set nocursorline
+    au WinEnter,InsertLeave * set cursorline
+augroup END
+
+" Only shown when not in insert mode so I don't go insane.
+augroup trailing
+    au!
+    au InsertEnter * :set listchars+=eol:¬
+    au InsertLeave * :set listchars-=eol:¬
+augroup END
+
+
+" Make sure Vim returns to the same line when you reopen a file.
+augroup line_return
+    au!
+    au BufReadPost *
+        \ if line("'\"") > 0 && line("'\"") <= line("$") |
+        \     execute 'normal! g`"zvzz' |
+        \ endif
+augroup END
+
+" Spacing and tabbing
+set expandtab
+set smarttab
+set softtabstop=4
+set shiftwidth=4
+set wrap
+set textwidth=80
+set formatoptions=qrn1
+
+" Get those annoying temporary files out of the working directory
+set backup                       " enable backups
+set undodir=~/.vim/tmp/undo/     " undo files
+set backupdir=~/.vim/tmp/backup/ " backups
+set directory=~/.vim/tmp/swap/   " swap files
+let g:yankring_history_dir='~/.vim/tmp/yankring'
+
+" Make those folders automatically if they don't already exist.
+if !isdirectory(expand(&undodir))
+    call mkdir(expand(&undodir), "p")
+endif
+if !isdirectory(expand(&backupdir))
+    call mkdir(expand(&backupdir), "p")
+endif
+if !isdirectory(expand(&directory))
+    call mkdir(expand(&directory), "p")
+endif
+
+" Leader key remapping
+let mapleader = ","
+let maplocalleader = "\\"
+map <leader><space> :noh<cr>
+
+
+
 " Rainbow {{{
 
 let g:rainbow_active = 1
@@ -67,10 +128,10 @@ let g:rainbow_active = 1
 syntax enable
 set background=dark
 if has('gui_running')
-	set background=dark
+    set background=dark
 else
-	set background=dark
-	let g:solarized_termcolors=256
+    set background=dark
+    let g:solarized_termcolors=256
 endif
 colorscheme solarized
 " }}}
