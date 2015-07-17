@@ -116,12 +116,25 @@ let mapleader = ","
 let maplocalleader = "\\"
 map <leader><space> :noh<cr>
 
+" <ESC> is really far away
+imap <c-d> <ESC>
+nnoremap <c-d> <ESC>
+vnoremap <c-d> <ESC>
+cnoremap <c-d> <ESC>
+
+" Toggle line numbers
+nnoremap <leader>n :setlocal number!<cr>
+
+" Show contents of registers
+nnoremap <leader>r :registers<cr>
+
+" Ctags  Rebuild (mnemonic CR -> <cr>)
+nnoremap <leader><cr> :silent !ctags -R --exclude=.git --exclude=build .<cr>:redraw!<cr>
+
 
 
 " Rainbow {{{
-
 let g:rainbow_active = 1
-
 " }}}
 
 " Solarized {{{
@@ -137,7 +150,6 @@ colorscheme solarized
 " }}}
 
 " NERD Tree {{{
-
 noremap  <F2> :NERDTreeToggle<cr>
 inoremap <F2> <esc>:NERDTreeToggle<cr>
 
@@ -161,7 +173,6 @@ let NERDTreeChDirMode = 2
 "let NERDChristmasTree = 1
 " Jump to the first child of the current nodes parent.
 let NERDTreeMapJumpFirstChild = 'gK'
-
 " }}}
 
 " Tagbar {{{
