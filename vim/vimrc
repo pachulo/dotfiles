@@ -93,6 +93,9 @@ set wrap
 set textwidth=80
 set formatoptions=qrn1
 
+" Keep the current working line in the center of the screen
+set scrolloff=3
+
 " Get those annoying temporary files out of the working directory
 set backup                       " enable backups
 set undodir=~/.vim/tmp/undo/     " undo files
@@ -179,4 +182,12 @@ let NERDTreeMapJumpFirstChild = 'gK'
 inoremap <F7> :TagbarToggle<CR>
 nnoremap <F7> :TagbarToggle<CR>
 vnoremap <F7> :TagbarToggle<CR>
+" }}}
+
+" Limelight {{{
+" https://zenbro.github.io/2015/06/09/meditating-on-code.html
+nmap <silent> gl :Limelight!!<CR>
+xmap gl <Plug>(Limelight)
+let g:limelight_default_coefficient = 0.7
+"let g:limelight_paragraph_span = 1
 " }}}
