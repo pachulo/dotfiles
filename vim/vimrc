@@ -191,3 +191,10 @@ xmap gl <Plug>(Limelight)
 let g:limelight_default_coefficient = 0.7
 "let g:limelight_paragraph_span = 1
 " }}}
+
+" Quick-scope {{{{
+" Map the leader key + q to toggle quick-scope's highlighting in normal/visual mode.
+" Note that you must use nmap/vmap instead of their non-recursive versions (nnoremap/vnoremap).
+nmap <leader>q <plug>(QuickScopeToggle)
+vmap <leader>q <plug>(QuickScopeToggle)
+" }}}}
