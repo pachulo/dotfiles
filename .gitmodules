@@ -22,3 +22,6 @@
 [submodule "vim/bundle/quick-scope"]
 	path = vim/bundle/quick-scope
 	url = https://github.com/unblevable/quick-scope
+[submodule "vim/bundle/Dockerfile.vim"]
+	path = vim/bundle/Dockerfile.vim
+	url = https://github.com/ekalinin/Dockerfile.vim.git
