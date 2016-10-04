@@ -35,7 +35,7 @@ set list                                            "
 set listchars=tab:▸\ ,trail:·,extends:❯,precedes:❮  " Characters for whitespace
 set shell=/bin/bash\ --login                        "
 set matchtime=3                                     " 
-set showbreak=↪i                                    " Cahracter used to trunk lines
+let &showbreak = '↪ '                               " Character used to trunk lines
 set splitbelow                                      " 
 set splitright                                      " 
 set fillchars=diff:⣿,vert:│                         " Characters for filling
