@@ -195,6 +195,9 @@ let g:limelight_default_coefficient = 0.7
 " Quick-scope {{{{
 " Map the leader key + q to toggle quick-scope's highlighting in normal/visual mode.
 " Note that you must use nmap/vmap instead of their non-recursive versions (nnoremap/vnoremap).
-nmap <leader>q <plug>(QuickScopeToggle)
-vmap <leader>q <plug>(QuickScopeToggle)
+"nmap <leader>q <plug>(QuickScopeToggle)
+"vmap <leader>q <plug>(QuickScopeToggle)
+" The performance of vim when quickscope is always on is crap; highlight
+" characters only when we want to move.
+let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 " }}}}
