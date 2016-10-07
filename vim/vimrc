@@ -28,25 +28,25 @@ set ttyfast                                         " Draw screen quickly
 set ruler                                           " Always show cursor position
 set backspace=indent,eol,start                      " Backspace over anything in insert mode
 set number                                          " Display line numbers
-set norelativenumber                                " 
+set norelativenumber                                "
 set laststatus=2                                    " Always show status line
 set history=1000                                    " Number of old commands to remember
-set list                                            " 
+set list                                            "
 set listchars=tab:▸\ ,trail:·,extends:❯,precedes:❮  " Characters for whitespace
 set shell=/bin/bash\ --login                        "
-set matchtime=3                                     " 
+set matchtime=3                                     "
 let &showbreak = '↪ '                               " Character used to trunk lines
-set splitbelow                                      " 
-set splitright                                      " 
+set splitbelow                                      "
+set splitright                                      "
 set fillchars=diff:⣿,vert:│                         " Characters for filling
-set autowrite                                       " 
+set autowrite                                       "
 set autoread                                        " Automatically reload file if its changed
-set shiftround                                      " 
+set shiftround                                      "
 set title                                           " Vim sets window title
 set linebreak                                       " When line is wrapped, break at word boundary
 "set spellfile=~/.vim/custom-dictionary.utf-8.add
-set colorcolumn=+1                                  " 
-set modelines=5                                     " 
+set colorcolumn=+1                                  "
+set modelines=5                                     "
 
 " Disabling this because vim-airline doesn't like it
 "set lazyredraw
@@ -138,6 +138,8 @@ nnoremap <leader>r :registers<cr>
 " Ctags  Rebuild (mnemonic CR -> <cr>)
 nnoremap <leader><cr> :silent !ctags -R --exclude=.git --exclude=build .<cr>:redraw!<cr>
 
+" Delete trailspaces
+nnoremap <leader>t :%s/\s\+$//e<cr>
 
 
 " Rainbow {{{
