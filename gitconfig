@@ -2,7 +2,7 @@
     name = Marc Peña Segarra
     email = segarrra@gmail.com
 [push]
-    default = nothing
+    default = simple
 [alias]
     lg = !"git lg1"
     lg1 = !"git lg1-specific --all"
