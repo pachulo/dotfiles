@@ -4,8 +4,8 @@
 To use the vim config files:
 
 	git clone --recursive https://github.com/pachulo/dotfiles.git pachulo-dotfiles.git
-	ln -s ~/pachulo-dotfiles.git/.vim ~/
-	ln -s ~/pachulo-dotfiles.git/.vimrc ~/
+	ln -s ~/pachulo-dotfiles.git/vimrc ~/.vimrc
+	ln -s ~/pachulo-dotfiles.git/vim ~/.vim
 
 ## Bash
 To use the bash_profile file:
