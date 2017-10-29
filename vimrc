@@ -4,6 +4,8 @@
 " Source: http://bitbucket.org/sjl/dotfiles/src/tip/vim/
 " And from ashwin:
 " https://github.com/ashwin/dot_files/blob/master/vim/.vimrc
+" And from amix:
+" https://github.com/amix/vimrc/
 
 " Ignore compatibility issues with Vi. Really don't know why ViM still defaults
 " to this. Especially gViM.
@@ -28,7 +30,7 @@ set ttyfast                                         " Draw screen quickly
 set ruler                                           " Always show cursor position
 set backspace=indent,eol,start                      " Backspace over anything in insert mode
 set number                                          " Display line numbers
-set norelativenumber                                "
+set relativenumber                                  " Use relative line numbers
 set laststatus=2                                    " Always show status line
 set history=1000                                    " Number of old commands to remember
 set list                                            "
@@ -49,7 +51,7 @@ set colorcolumn=+1                                  "
 set modelines=5                                     "
 
 " Disabling this because vim-airline doesn't like it
-"set lazyredraw
+set lazyredraw
 
 " Set options regarding the undo history and undo tree depth
 set undofile
@@ -69,7 +71,7 @@ augroup cline
     au WinEnter,InsertLeave * set cursorline
 augroup END
 
-" Only shown when not in insert mode so I don't go insane.
+" Only shown trailing spaces when not in insert mode so I don't go insane.
 augroup trailing
     au!
     au InsertEnter * :set listchars+=eol:¬
@@ -87,18 +89,30 @@ augroup line_return
 augroup END
 
 " Spacing and tabbing
-set expandtab
-set smarttab
-set softtabstop=4
-set shiftwidth=4
-set wrap
+set expandtab                           " Use spaces instead of tabs
+set smarttab                            " Be smart when using tabs ;)
+set softtabstop=4                       " 1 tab == 4 spaces
+set shiftwidth=4                        " 1 tab == 4 spaces
+set wrap                                " Wrap lines
 set textwidth=80
 set formatoptions=qrn1
 
 " Scrolling
-set scrolloff=3                         " Keep the current working line in the center of the screen
+set scrolloff=5                         " Keep the current working line in the center of the screen
 set sidescroll=1                        " Smooth side scrolling
 set sidescrolloff=5                     " Left-right offset during side-scrolling
+
+" Searching
+set smartcase                           " When searching try to be smart about cases
+"set hlsearch                            " Highlight search results
+set incsearch                           " Makes search act like search in modern browsers
+
+" Moving around, tabs, windows and buffers
+" Smart way to move between windows
+map <C-j> <C-W>j
+map <C-k> <C-W>k
+map <C-h> <C-W>h
+map <C-l> <C-W>l
 
 " Get those annoying temporary files out of the working directory
 set backup                       " enable backups
@@ -141,6 +155,12 @@ nnoremap <leader><cr> :silent !ctags -R --exclude=.git --exclude=build .<cr>:red
 " Delete trailspaces
 nnoremap <leader>t :%s/\s\+$//e<cr>
 
+" Fast saving
+nmap <leader>w :w!<cr>
+
+" :W sudo saves the file
+" (useful for handling the permission-denied error)
+command W w !sudo tee % > /dev/null
 
 " Rainbow {{{
 let g:rainbow_active = 1
