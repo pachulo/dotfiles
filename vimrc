@@ -121,6 +121,13 @@ set backupdir=~/.vim/tmp/backup/ " backups
 set directory=~/.vim/tmp/swap/   " swap files
 let g:yankring_history_dir='~/.vim/tmp/yankring'
 
+"Hide relative line numbers when in insert mode
+augroup numbertoggle
+  autocmd!
+  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
+  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
+augroup END
+
 " Make those folders automatically if they don't already exist.
 if !isdirectory(expand(&undodir))
     call mkdir(expand(&undodir), "p")
@@ -144,7 +151,7 @@ vnoremap <c-d> <ESC>
 cnoremap <c-d> <ESC>
 
 " Toggle line numbers
-nnoremap <leader>n :setlocal number!<cr>
+nnoremap <leader>n :setlocal number! relativenumber!<cr>
 
 " Show contents of registers
 nnoremap <leader>r :registers<cr>
