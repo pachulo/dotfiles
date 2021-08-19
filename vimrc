@@ -115,10 +115,10 @@ map <C-h> <C-W>h
 map <C-l> <C-W>l
 
 " Get those annoying temporary files out of the working directory
-set backup                       " enable backups
-set undodir=~/.vim/tmp/undo/     " undo files
-set backupdir=~/.vim/tmp/backup/ " backups
-set directory=~/.vim/tmp/swap/   " swap files
+set backup                          " enable backups
+set undodir=~/.vim/tmp/undo//       " undo files
+set backupdir=~/.vim/tmp/backup//   " backups
+set directory=~/.vim/tmp/swap//     " swap files
 let g:yankring_history_dir='~/.vim/tmp/yankring'
 
 "Hide relative line numbers when in insert mode
