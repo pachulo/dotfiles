@@ -1,6 +1,9 @@
 [user]
     name = Marc Peña Segarra
     email = segarrra@gmail.com
+# Enforce SSH
+[url "ssh://git@github.com/"]
+  insteadOf = https://github.com/
 [url "git+ssh://pachulo@git.launchpad.net/"]
             insteadof = lp:
 [push]
